@@ -15,11 +15,15 @@ enum Names
     DIV,//6
     LPAREN,//7
     RPAREN,//8
-    NUMBER,//9
-    DOUBLE_LITERAL,//10
-    FLOAT_LITERAL,//11
-    INTEGER_LITERAL,//12
-    END_OF_FILE,//13
+    LCOL,//9
+    RCOL,//10
+    LCHAVES,//11
+    RCHAVES,//12
+    NUMBER,//13
+    DOUBLE_LITERAL,//14
+    FLOAT_LITERAL,//15
+    INTEGER_LITERAL,//16
+    END_OF_FILE,//17
     
 };
 

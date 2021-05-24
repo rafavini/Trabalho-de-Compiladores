@@ -29,6 +29,8 @@ Scanner::nextToken()
         tok = new Token(END_OF_FILE);
     }
     //Operadores aritmeticos
+    
+    
    else if ((*input)[pos] == '+')//+
    {
         pos++;
@@ -59,8 +61,28 @@ Scanner::nextToken()
         pos++;
         tok = new Token(RPAREN);
    }
+    else if ((*input)[pos] == '[')
+   {
+        pos++;
+        tok = new Token(LCOL);
+   }
+   else if ((*input)[pos] == ']')
+   {
+        pos++;
+        tok = new Token(RCOL);
+   }
+    else if ((*input)[pos] == '{')
+   {
+        pos++;
+        tok = new Token(LCHAVES);
+   }
+   else if ((*input)[pos] == '}')
+   {
+        pos++;
+        tok = new Token(RCHAVES);
+   }
     //Identificadores
-    else if (isalpha((*input)[pos]))
+    else if (isalpha((*input)[pos]) || (*input)[pos] == '_')
     {
         pos++;
         while (isalnum((*input)[pos]))

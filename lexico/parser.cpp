@@ -58,6 +58,7 @@ Parser::exprLinha()
 		term();
 		exprLinha();
 	}
+
 	//else
 	//	;
 
@@ -105,6 +106,18 @@ Parser::factor()
 		advance();
 		expr();
 		match(RPAREN);
+	}
+	else if (lToken->name == LCOL)
+	{
+		advance();
+		expr();
+		match(RCOL);
+	}
+	else if (lToken->name == LCHAVES)
+	{
+		advance();
+		expr();
+		match(RCHAVES);
 	}
 	else
 		error();

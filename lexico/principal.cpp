@@ -5,7 +5,7 @@ int main(int argc, char* argv[])
 {
     string* vetNomes;
 
-    vetNomes = new string[17];
+    vetNomes = new string[100];
 
     vetNomes[0] = " UNDEF";
     vetNomes[1] = " ID";
@@ -16,10 +16,10 @@ int main(int argc, char* argv[])
     vetNomes[6] = "DIV";
     vetNomes[7] = " LPAREN";
     vetNomes[8] = " RPAREN";
-    vetNomes[9] = " NUMBER";
-    vetNomes[10] = "DOUBLE_LITERAL";
-    vetNomes[11] = "FLOAT_LITERAL";
-    vetNomes[12] = "INTEGER_LITERAL";
+    vetNomes[9] = " LCOL";
+    vetNomes[10] = "RCOL";
+    vetNomes[11] = "LCHAVES";
+    vetNomes[12] = "RCHAVES";
     vetNomes[13] = "END_OF_FILE";
     string input;
     
@@ -32,7 +32,7 @@ int main(int argc, char* argv[])
 
     delete parser;
 
-    /*Scanner* scanner = new Scanner(&input);
+    Scanner* scanner = new Scanner(&input);
     
     Token* t;
     
@@ -46,7 +46,7 @@ int main(int argc, char* argv[])
     }while (t->name != END_OF_FILE);
     cout << endl;
 
-    delete scanner;*/
+    //delete scanner;*/
 
     return 0;
 }
