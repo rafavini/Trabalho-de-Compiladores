@@ -52,7 +52,7 @@ Scanner::nextToken()
         if((*input)[pos] == '/')
         {
             pos++;
-            while(isalpha((*input)[pos]) || isalnum((*input)[pos]))
+            while(isalpha((*input)[pos]) || isalnum((*input)[pos])|| isspace((*input)[pos]))
                 pos++;
                 
             //COLOCAR AQUI DEPOIS A CONDICAO DO \n
@@ -61,7 +61,7 @@ Scanner::nextToken()
         }else if((*input)[pos] =='*')
         {
             pos++;
-            while(isalpha((*input)[pos]) || isalnum((*input)[pos]))
+            while(isalpha((*input)[pos]) || isalnum((*input)[pos])|| isspace((*input)[pos]))
                 pos++;
             if((*input)[pos] == '*')
             {
@@ -128,7 +128,7 @@ Scanner::nextToken()
    else if ((*input)[pos] == '"')
    {
         pos++;
-        while(isalpha((*input)[pos]) || isalnum((*input)[pos]))
+        while(isalpha((*input)[pos]) || isalnum((*input)[pos])|| isspace((*input)[pos]))
             pos++; 
         if((*input)[pos] == '"')
         {
