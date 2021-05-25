@@ -49,7 +49,20 @@ Scanner::nextToken()
    else if ((*input)[pos] == '/')
    {
         pos++;
-        tok = new Token(ARITHOP, DIV);
+        if((*input)[pos] == '/')
+        {
+            pos++;
+            while(isalpha((*input)[pos]) || isalnum((*input)[pos]))
+                pos++;
+                
+            //COLOCAR AQUI DEPOIS A CONDICAO DO \n
+             tok = new Token(COMENTARIO);
+            
+        }else
+        {
+            tok = new Token(ARITHOP, DIV);    
+        }
+        
    }
    else if ((*input)[pos] == '(')
    {
@@ -93,8 +106,8 @@ Scanner::nextToken()
             pos++;
             tok = new Token(STRING_LITERAL);
         }
-
    }
+
    
     //Identificadores
     else if (isalpha((*input)[pos]) || (*input)[pos] == '_')
