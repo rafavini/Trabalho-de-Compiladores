@@ -64,7 +64,8 @@ Scanner::nextToken()
     else if ((*input)[pos] == '[')
    {
         pos++;
-        tok = new Token(LCOL);
+        tok = new
+         Token(LCOL);
    }
    else if ((*input)[pos] == ']')
    {
@@ -81,6 +82,20 @@ Scanner::nextToken()
         pos++;
         tok = new Token(RCHAVES);
    }
+   else if ((*input)[pos] == '"')
+   {
+        pos++;
+        while(isalpha((*input)[pos]))
+            pos++;
+        while(isalnum((*input)[pos]))
+            pos++;
+
+    
+         tok = new Token(STRING_LITERAL);   
+
+        
+   }
+   
     //Identificadores
     else if (isalpha((*input)[pos]) || (*input)[pos] == '_')
     {

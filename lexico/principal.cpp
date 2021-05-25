@@ -5,7 +5,7 @@ int main(int argc, char* argv[])
 {
     string* vetNomes;
 
-    vetNomes = new string[100];
+    vetNomes = new string[300];
 
     vetNomes[0] = " UNDEF";
     vetNomes[1] = " ID";
@@ -20,7 +20,8 @@ int main(int argc, char* argv[])
     vetNomes[10] = "RCOL";
     vetNomes[11] = "LCHAVES";
     vetNomes[12] = "RCHAVES";
-    vetNomes[13] = "END_OF_FILE";
+    vetNomes[13] = "S_COMENTARIO";
+    vetNomes[14] = "STRING_LITERAL";
     string input;
     
     getline(cin, input);

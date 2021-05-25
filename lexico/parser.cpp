@@ -119,6 +119,10 @@ Parser::factor()
 		expr();
 		match(RCHAVES);
 	}
+	else if (lToken->name == STRING_LITERAL)
+	{
+		advance();
+	}
 	else
 		error();
 }
