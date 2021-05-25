@@ -58,11 +58,24 @@ Scanner::nextToken()
             //COLOCAR AQUI DEPOIS A CONDICAO DO \n
              tok = new Token(COMENTARIO);
             
+        }else if((*input)[pos] =='*')
+        {
+            pos++;
+            while(isalpha((*input)[pos]) || isalnum((*input)[pos]))
+                pos++;
+            if((*input)[pos] == '*')
+            {
+                pos++;
+                if((*input)[pos] == '/')
+                {
+                    pos++;
+                    tok = new Token(COMENTARIO);
+                }
+            }
         }else
         {
-            tok = new Token(ARITHOP, DIV);    
+            tok = new Token(ARITHOP,DIV);
         }
-        
    }
    else if ((*input)[pos] == '(')
    {
@@ -93,6 +106,11 @@ Scanner::nextToken()
    {
         pos++;
         tok = new Token(RCHAVES);
+   }
+   else if ((*input)[pos] == ';')
+   {
+        pos++;
+        tok = new Token(PONTO_VIRGULA);
    }
 
    //STRING LITERAL

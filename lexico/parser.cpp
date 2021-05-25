@@ -125,7 +125,10 @@ Parser::factor()
 	}
 	else if (lToken->name == COMENTARIO)
 	{
-
+		advance();
+	}
+	else if (lToken->name == PONTO_VIRGULA)
+	{
 		advance();
 	}
 	else
