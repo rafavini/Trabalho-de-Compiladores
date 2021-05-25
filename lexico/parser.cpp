@@ -123,6 +123,11 @@ Parser::factor()
 	{
 		advance();
 	}
+	else if (lToken->name == COMENTARIO)
+	{
+
+		advance();
+	}
 	else
 		error();
 }
