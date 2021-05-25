@@ -20,7 +20,7 @@ int main(int argc, char* argv[])
     vetNomes[10] = "RCOL";
     vetNomes[11] = "LCHAVES";
     vetNomes[12] = "RCHAVES";
-    vetNomes[13] = "S_COMENTARIO";
+    vetNomes[13] = "NUMBER";
     vetNomes[14] = "STRING_LITERAL";
     vetNomes[15] = "COMENTARIO";
     vetNomes[16] = "PONTO_VIRGULA";
