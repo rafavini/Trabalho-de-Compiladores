@@ -24,6 +24,8 @@ int main(int argc, char* argv[])
     vetNomes[14] = "STRING_LITERAL";
     vetNomes[15] = "COMENTARIO";
     vetNomes[16] = "PONTO_VIRGULA";
+    vetNomes[17] = "PONTO";
+    vetNomes[18] = "VIRGULA";
     string input;
     
     getline(cin, input);

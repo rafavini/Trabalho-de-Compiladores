@@ -131,6 +131,14 @@ Parser::factor()
 	{
 		advance();
 	}
+	else if (lToken->name == PONTO)
+	{
+		advance();
+	}
+	else if (lToken->name == VIRGULA)
+	{
+		advance();
+	}
 	else
 		error();
 }

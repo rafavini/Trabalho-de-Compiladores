@@ -107,11 +107,22 @@ Scanner::nextToken()
         pos++;
         tok = new Token(RCHAVES);
    }
+   else if ((*input)[pos] == '.')
+   {
+        pos++;
+        tok = new Token(PONTO);
+   }
+    else if ((*input)[pos] == ',')
+   {
+        pos++;
+        tok = new Token(VIRGULA);
+   }
    else if ((*input)[pos] == ';')
    {
         pos++;
         tok = new Token(PONTO_VIRGULA);
    }
+   
 
    //STRING LITERAL
    else if ((*input)[pos] == '"')
