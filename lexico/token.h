@@ -13,22 +13,30 @@ enum Names
     MINUS,//4
     MULT,//5
     DIV,//6
-    LPAREN,//7
-    RPAREN,//8
-    LCOL,//9
-    RCOL,//10
-    LCHAVES,//11
-    RCHAVES,//12
-    NUMBER,//13
-    STRING_LITERAL,//14
-    COMENTARIO,//15
-    PONTO_VIRGULA,//16
-    PONTO,//17
-    VIRGULA,//18
-    DOUBLE_LITERAL,//19
-    FLOAT_LITERAL,//20
-    INTEGER_LITERAL,//21
-    END_OF_FILE,//22
+    MENOR,//7
+    MAIOR,//8
+    MENOR_IGUAL,//9
+    MAIOR_IGUAL,//10
+    MOD,//11
+    RECEBE,//12
+    IGUAL,//13
+    DIFERENTE,//14 
+    LPAREN,//15
+    RPAREN,//16
+    LCOL,//17
+    RCOL,//18
+    LCHAVES,//19
+    RCHAVES,//20
+    NUMBER,//21
+    STRING_LITERAL,//22
+    COMENTARIO,//23
+    PONTO_VIRGULA,//24
+    PONTO,//25
+    VIRGULA,//26
+    DOUBLE_LITERAL,//27
+    FLOAT_LITERAL,//28
+    INTEGER_LITERAL,//29
+    END_OF_FILE,//30
     
 };
 

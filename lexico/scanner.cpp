@@ -46,6 +46,58 @@ Scanner::nextToken()
         pos++;
         tok = new Token(ARITHOP, MULT);
    }
+   else if ((*input)[pos] == '<')
+   {
+    pos++;
+        if((*input)[pos] == '=')
+        {
+            pos++;
+            tok = new Token(ARITHOP,MENOR_IGUAL);
+        }else
+        {
+            tok = new Token(ARITHOP,MENOR);
+        }
+    
+   }
+    else if ((*input)[pos] == '>')
+   {
+    pos++;
+        if((*input)[pos] == '=')
+        {
+            pos++;
+            tok = new Token(ARITHOP,MAIOR_IGUAL);
+        }else
+        {
+           tok = new Token(ARITHOP,MAIOR); 
+        }
+    
+   }
+   else if((*input)[pos] == '%')
+   {
+    pos++;
+    tok = new Token(ARITHOP,MOD);
+   }
+   else if ((*input)[pos] == '=')
+   {
+    pos++;
+    if((*input)[pos] == '=')
+    {
+        pos++;
+        tok = new Token(ARITHOP,IGUAL);
+    }else
+    {
+        tok = new Token(ARITHOP,RECEBE);
+    }
+   }   
+   else if ((*input)[pos] == '!')
+   {
+    pos++;
+    if((*input)[pos] == '=')
+    {
+        pos++;
+        tok = new Token(ARITHOP,DIFERENTE);
+    }
+   }
    else if ((*input)[pos] == '/')
    {
         pos++;

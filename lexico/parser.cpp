@@ -58,6 +58,31 @@ Parser::exprLinha()
 		term();
 		exprLinha();
 	}
+	else if (lToken->attribute == MENOR)
+	{
+		advance();
+		term();
+		exprLinha();
+	}
+	else if (lToken->attribute == MENOR_IGUAL)
+	{
+		advance();
+		term();
+		exprLinha();
+	}
+
+	else if (lToken->attribute == MAIOR)
+	{
+		advance();
+		term();
+		exprLinha();
+	}
+	else if (lToken->attribute == MAIOR_IGUAL)
+	{
+		advance();
+		term();
+		exprLinha();
+	}
 
 	//else
 	//	;
@@ -81,6 +106,30 @@ Parser::termLinha()
 		termLinha();
 	}
 	else if (lToken->attribute == DIV)
+	{
+		advance();
+		factor();
+		termLinha();
+	}
+	else if (lToken->attribute == MOD)
+	{
+		advance();
+		factor();
+		termLinha();
+	}
+	else if (lToken->attribute == RECEBE)
+	{
+		advance();
+		factor();
+		termLinha();
+	}
+	else if (lToken->attribute == IGUAL)
+	{
+		advance();
+		factor();
+		termLinha();
+	}
+	else if (lToken->attribute == DIFERENTE)
 	{
 		advance();
 		factor();
