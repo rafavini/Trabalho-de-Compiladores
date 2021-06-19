@@ -51,7 +51,7 @@ int main(int argc, char* argv[])
 
     parser->run();
 
-    // delete parser;
+     //delete parser;
 
 
 
@@ -69,6 +69,7 @@ int main(int argc, char* argv[])
     }while (t->name != END_OF_FILE);
     cout << endl;
     */
+
     //delete scanner;
 
 

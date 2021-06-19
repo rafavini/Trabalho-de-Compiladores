@@ -7,6 +7,8 @@ Scanner::Scanner(string input)
     cout << "Entrada: " << (*input) << endl << "Tamanho: " 
          << input->length() << endl; */
     pos = 0;
+    line = 1;
+    FlagErro = false;
     ifstream inputFile(input, ios::in);
     string line;
 
@@ -21,6 +23,14 @@ Scanner::Scanner(string input)
     
     cout << this->input;
 }
+int
+Scanner::getLine(){
+    return line;
+}
+bool
+Scanner::getFlagErro(){
+    return FlagErro;
+}
 
 //Método que retorna o próximo token da entrada
 Token* 
@@ -32,8 +42,12 @@ Scanner::nextToken()
     state = 0;
 
     //Consumir espaços em branco
-    while (isspace((input)[pos]))
+    while (isspace((input)[pos])){
         pos++;
+
+        if(input[pos] == '\n')
+            line++;
+    }
 
     //Verificar os tokens possíveis
     //Fim de arquivo
@@ -119,6 +133,10 @@ Scanner::nextToken()
             pos++;
             while(isalpha((input)[pos]) || isalnum((input)[pos])|| isspace((input)[pos]))
                 pos++;
+
+            if(input[pos] == '\n'){
+                line++;
+            }
                 
             //COLOCAR AQUI DEPOIS A CONDICAO DO \n
              tok = new Token(COMENTARIO);
@@ -136,6 +154,8 @@ Scanner::nextToken()
                     pos++;
                     tok = new Token(COMENTARIO);
                 }
+            }else{
+                lexicalError("Comentario em bloco nao encerrado");
             }
         }else
         {
@@ -235,7 +255,7 @@ Scanner::nextToken()
                     pos++;
             }
             else
-                lexicalError();
+                lexicalError("Token mal formado");
 
             isFloat = true;
         }
@@ -255,7 +275,7 @@ Scanner::nextToken()
                     pos++;
             }
             else
-                lexicalError();
+                lexicalError("Token mal formado");
 
             isDouble = true;
         }
@@ -269,7 +289,7 @@ Scanner::nextToken()
 
     }
     else
-        lexicalError();
+        lexicalError("Token mal formado");
 
     return tok;
     /*
@@ -466,9 +486,10 @@ Scanner::nextToken()
 }
 
 void 
-Scanner::lexicalError()
+Scanner::lexicalError(string msg)
 {
-    cout << "Token mal formado\n";
+    FlagErro = true;
+    cout << "Linha: " << line << ": " << msg << endl;
     
     exit(EXIT_FAILURE);
 }

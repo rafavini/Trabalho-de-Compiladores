@@ -17,7 +17,7 @@ Parser::match(int t)
 	if (lToken->name == t || lToken->attribute == t)
 		advance();
 	else
-		error();
+		error("Erro inesperado");
 }
 
 void
@@ -27,7 +27,11 @@ Parser::run()
 
 	goal();
 
-	cout << "Compilação encerrada com sucesso!\n";
+	if(!FlagErro){
+		cout << "Compilação encerrada com sucesso!\n";
+	}
+
+	
 }
 
 void 
@@ -190,13 +194,16 @@ Parser::factor()
 		advance();
 	}
 	else
-		error();
+		error("Erro inesperado");
 }
 
+
 void
-Parser::error()
+Parser::error(string msg)
 {
-	cout << "Erro sintático\n";
+	line = scanner->getLine();
+	FlagErro = scanner->getFlagErro();
+	cout << "Linha " << line << ": " << msg << endl;
 
 	exit(EXIT_FAILURE);
 }
