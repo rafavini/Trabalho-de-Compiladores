@@ -1,6 +1,6 @@
 #include "parser.h"
 
-Parser::Parser(string input)
+Parser::Parser(string* input)
 {
 	scanner = new Scanner(input);
 }
@@ -17,7 +17,7 @@ Parser::match(int t)
 	if (lToken->name == t || lToken->attribute == t)
 		advance();
 	else
-		error("Erro inesperado");
+		error();
 }
 
 void
@@ -48,7 +48,6 @@ Parser::exprLinha()
 {
 	if (lToken->attribute == PLUS)
 	{
-		
 		advance();
 		term();
 		exprLinha();
@@ -190,15 +189,13 @@ Parser::factor()
 		advance();
 	}
 	else
-		error("Erro inesperado");
+		error();
 }
 
-
 void
-Parser::error(string msg)
+Parser::error()
 {
-	
-	linha = scanner->getLine();
-	cout << "Linha: " << linha << ": " << msg << endl;
+	cout << "Erro sintático\n";
+
 	exit(EXIT_FAILURE);
 }

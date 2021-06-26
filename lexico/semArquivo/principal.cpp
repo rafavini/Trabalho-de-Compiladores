@@ -1,13 +1,9 @@
 #include "parser.h"
-#include<fstream>
-#include<ostream>
 
-#include<iostream>
 
 int main(int argc, char* argv[]) 
 {
     string* vetNomes;
-    
 
     vetNomes = new string[500];
 
@@ -42,20 +38,18 @@ int main(int argc, char* argv[])
     vetNomes[28] = "FLOAT_LITERAL";
     vetNomes[29] = "INTEGER_LITERAL";
     vetNomes[30] = "END_OF_FILE";
-
-    //string input;
+    string input;
     
-    //getline(cin, input);
+    getline(cin, input);
 
-    Parser* parser = new Parser(argv[1]);
+    Parser* parser = new Parser(&input);
 
     parser->run();
 
-     //delete parser;
 
+    delete parser;
 
-
-   Scanner* scanner = new Scanner(argv[1]);
+    Scanner* scanner = new Scanner(&input);
     
     Token* t;
     
@@ -68,12 +62,8 @@ int main(int argc, char* argv[])
             cout << "(" << vetNomes[t->attribute] << ")";
     }while (t->name != END_OF_FILE);
     cout << endl;
-    
 
-    delete scanner;
-
-
-     
+    //delete scanner;*/
 
     return 0;
 }

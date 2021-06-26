@@ -5,8 +5,6 @@ class Parser
 	private:
 		Scanner* scanner;
 		Token* lToken;
-		int linha;
-		
 
 		void advance();
 		void match(int);
@@ -16,9 +14,9 @@ class Parser
 		void term();
 		void termLinha();
 		void factor();
-		void error(string);
+		void error();
 
 	public:
-		Parser(string);
+		Parser(string*);
 		void run();
 };
