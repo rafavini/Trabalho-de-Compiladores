@@ -61,11 +61,11 @@ int main(int argc, char* argv[])
     
     //getline(cin, input);
 
-   // Parser* parser = new Parser(argv[1]);
+    Parser* parser = new Parser(argv[1]);
 
-    //parser->run();
+    parser->run();
 
-     //delete parser;
+    delete parser;
 
 
 
