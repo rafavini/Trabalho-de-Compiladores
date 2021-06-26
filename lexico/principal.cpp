@@ -41,15 +41,29 @@ int main(int argc, char* argv[])
     vetNomes[27] = "DOUBLE_LITERAL";
     vetNomes[28] = "FLOAT_LITERAL";
     vetNomes[29] = "INTEGER_LITERAL";
-    vetNomes[30] = "END_OF_FILE";
-
+    vetNomes[30] = "CLASS";
+    vetNomes[31] = "EXTENDS";
+    vetNomes[32] = "CONSTRUCTOR";
+    vetNomes[33] = "FOR";
+    vetNomes[34] = "READ";
+    vetNomes[35] = "SUPER";
+    vetNomes[36] = "BREAK";
+    vetNomes[37] = "NEW";
+    vetNomes[38] = "INT";
+    vetNomes[39] = "IF";
+    vetNomes[40] = "ELSE";
+    vetNomes[41] = "PRINT";
+    vetNomes[42] = "RETURN";
+    vetNomes[43] = "STRING";
+    vetNomes[44] = "END_OF_FILE";
+    
     //string input;
     
     //getline(cin, input);
 
-    Parser* parser = new Parser(argv[1]);
+   // Parser* parser = new Parser(argv[1]);
 
-    parser->run();
+    //parser->run();
 
      //delete parser;
 

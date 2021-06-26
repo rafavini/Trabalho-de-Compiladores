@@ -36,7 +36,22 @@ enum Names
     DOUBLE_LITERAL,//27
     FLOAT_LITERAL,//28
     INTEGER_LITERAL,//29
-    END_OF_FILE,//30
+    CLASS,//30
+    EXTENDS,//31
+    CONSTRUCTOR,//32
+    FOR,//33
+    READ,//34
+    SUPER,//35
+    BREAK,//36
+    NEW,//37
+    INT,//38
+    IF,//39
+    ELSE,//40
+    PRINT,//41
+    RETURN,//42
+    STRING,//43
+    END_OF_FILE,//44
+   
     
 };
 

@@ -85,6 +85,7 @@ Parser::exprLinha()
 		exprLinha();
 	}
 
+
 	//else
 	//	;
 
@@ -136,7 +137,9 @@ Parser::termLinha()
 		factor();
 		termLinha();
 	}
+	
 }
+
 
 void 
 Parser::factor()

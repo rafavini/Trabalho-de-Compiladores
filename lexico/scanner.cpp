@@ -242,6 +242,77 @@ Scanner::nextToken()
         }
    }
 
+   //palavras reservadas
+   //CLASS
+    else if (input[pos] == 'c' && input[pos+1] == 'l' && input[pos+2] == 'a' && input[pos+3] == 's' && input[pos+4] == 's' && isspace(input[pos+5])){
+       pos = 5;
+       tok = new Token(CLASS);
+   }
+    // INT
+    else if (input[pos] == 'i' && input[pos+1] == 'n' && input[pos+2] == 't' && isspace(input[pos+3])){
+        pos = pos + 3;
+        tok = new Token(INT);
+    }
+    // IF
+    else if ((input[pos] == 'i' && input[pos+1] == 'f') && (isspace(input[pos+2]) || input[pos+2] == '(')){
+            pos = pos + 2;
+            tok = new Token(IF);
+    }
+    // ELSE
+    else if((input[pos] == 'e' && input[pos+1] == 'l' && input[pos+2] == 's' && input[pos+3] == 'e') && (isspace(input[pos+4]) || input[pos+4] == '(')){  
+            pos = pos + 4;
+            tok = new Token(ELSE);
+    }
+     // PRINT
+    else if((input[pos] == 'p' && input[pos+1] == 'r' && input[pos+2] == 'i' && input[pos+3] == 'n' && input[pos+4] == 't') && (isspace(input[pos+5]) || input[pos+5] == '(')){
+            pos = pos + 5;
+            tok = new Token(PRINT);
+    }
+    //RETURN
+    else if(input[pos] == 'r' && input[pos+1] == 'e' && input[pos+2] == 't' && input[pos+3] == 'u' && input[pos+4] == 'r' && input[pos+5] == 'n' && isspace(input[pos+6])){
+        pos = pos + 6;
+        tok = new Token(RETURN);
+    }
+      // STRING
+    else if(input[pos] == 's' && input[pos+1] == 't' && input[pos+2] == 'r' && input[pos+3] == 'i' && input[pos+4] == 'n' && input[pos+5] == 'g' && isspace(input[pos+6])){
+        pos = pos + 6;
+        tok = new Token(STRING);
+    }
+    //EXTENDS
+    else if (input[pos] == 'e' && input[pos+1] == 'x' && input[pos+2] == 't' && input[pos+3] == 'e' && input[pos+4] == 'n' && input[pos+5] == 'd' && input[pos+6] == 's' && isspace(input[pos+7])){
+       pos =  pos + 7;
+       tok = new Token(EXTENDS);
+   }
+   //CONSTRUCTOR
+   else if (input[pos] == 'c' && input[pos+1] == 'o' && input[pos+2] == 'n' && input[pos+3] == 's' && input[pos+4] == 't' && input[pos+5] == 'r' && input[pos+6] == 'u' && input[pos+7] == 'c' && input[pos+8] == 't' && input[pos+9] == 'o' && input[pos+10] == 'r' && isspace(input[pos+11])){
+       pos = pos + 11;
+       tok = new Token(CONSTRUCTOR);
+   }
+   //FOR
+   else if ((input[pos] == 'f' && input[pos+1] == 'o' && input[pos+2] == 'r') && (isspace(input[pos+3]) || input[pos+4] == '(')){
+       pos = pos + 3;
+       tok = new Token(FOR);
+   }
+   //READ
+    else if ((input[pos] == 'r' && input[pos+1] == 'e' && input[pos+2] == 'a' && input[pos+3] == 'd') &&  (isspace(input[pos+4]) || input[pos+4] == '(')){
+       pos = pos + 4;
+       tok = new Token(READ);
+   }
+   //SUPER
+     else if ((input[pos] == 's' && input[pos+1] == 'u' && input[pos+2] == 'p' && input[pos+3] == 'e' && input[pos+4] == 'r') &&  (isspace(input[pos+5]) || input[pos+5] == '(')){
+       pos = pos + 5;
+       tok = new Token(SUPER);
+   }
+   //BREAK
+     else if ((input[pos] == 'b' && input[pos+1] == 'r' && input[pos+2] == 'e' && input[pos+3] == 'a' && input[pos+4] == 'k') &&  (isspace(input[pos+5]) || input[pos+5] == ';')){
+       pos = pos + 5;
+       tok = new Token(BREAK);
+   }
+   //NEW
+     else if ((input[pos] == 'n' && input[pos+1] == 'e' && input[pos+2] == 'w') && isspace(input[pos+3])){
+       pos = pos + 3;
+       tok = new Token(NEW);
+   }
    
     //Identificadores
     else if (isalpha(input[pos]) || input[pos] == '_')
